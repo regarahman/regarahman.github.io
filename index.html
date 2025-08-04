@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buat Aku Halu 😌</title>
+    <style>
+        body {
+            background-color: #fffafc;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            padding: 30px;
+            color: #2c2c2c;
+        }
+        .container {
+            background-color: #fef0f5;
+            border-radius: 18px;
+            padding: 30px;
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+        h1 {
+            font-size: 26px;
+            color: #d63384;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-size: 17px;
+            text-align: left;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            font-size: 15px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            margin-top: 5px;
+        }
+        .button {
+            margin-top: 20px;
+            padding: 12px 24px;
+            background-color: #d63384;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #c22674;
+        }
+        .surat {
+            margin-top: 30px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            font-size: 16px;
+            line-height: 1.6;
+            display: none;
+            box-shadow: 0 0 10px rgba(0,0,0,0.03);
+        }
+        .wa-button {
+            margin-top: 20px;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #25D366;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ssst... Isi dulu ya 😶</h1>
+        <label for="nama">hai ritaa</label>
+        <input type="text" id="ketik" placeholder="ketik hai ega">
+
+        <label for="kesukaan">Kamu suka apa?</label>
+        <input type="text" id="kesukaan" placeholder="contoh: baso, tidur, ega haha">
+
+        <label for="lagu">Lagu favorit kamu?</label>
+        <input type="text" id="lagu" placeholder="isi satu aja">
+
+        <button class="button" onclick="tampilkanSurat()">Lihat pesan dari ega 😳</button>
+
+        <div class="surat" id="hasilSurat">
+            <p id="isiSurat"></p>
+            <a class="wa-button" href="https://wa.me/6283829958905?text=Aku%20mau%20jawab%20pesan%20dari%20ega%20ganteng%20%F0%9F%A5%B0" target="_blank">Balas Aku di WhatsApp 😅</a>
+        </div>
+    </div>
+
+    <script>
+         function tampilkanSurat() {
+        var ketik = document.getElementById('ketik').value.trim().toLowerCase();
+        var kesukaan = document.getElementById('kesukaan').value.trim();
+        var lagu = document.getElementById('lagu').value.trim();
+
+        // Validasi: semua kolom harus diisi dan "hai ega" harus diketik
+        if (!ketik || !kesukaan || !lagu) {
+            alert("Isi semua dulu yaa, Rita 😶");
+            return;
+        }
+
+        if (ketik !== "hai ega") {
+            alert("Coba ketik: hai ega 😶");
+            return;
+        }
+
+        var surat = `Hai <b>Rita</b>,<br><br>
+        Kamu suka <b>${kesukaan}</b>? Sama. Aku juga suka kamu... tapi yauda, diem aja dulu.<br><br>
+        Dengerin "<b>${lagu}</b>" ya? sama aku juga deh wkwk.<br><br>
+        aku gabisa ngomong langsung, bisanya cuma bisa bikin kek gini haha. Tapi gapapa, minimal aku udah sampe di browser kamu 😌
+eh kamu lagi sendiri ga? kalo lagi sendiri, klik WA dibawah ya wkwk ? `;
+
+        document.getElementById('isiSurat').innerHTML = surat;
+        document.getElementById('hasilSurat').style.display = 'block';
+    }
+
+    </script>
+</body>
+</html>
